@@ -21,19 +21,24 @@ for weed in weeds:
 
 random.shuffle(garden)
 print("сад до прополки:", garden)
+print(id(garden))
 
-
+print()
+print()
 print(set(garden))
 
 
-
-while len() == 3: 
-    for a in garden:
-        if a in weeds:
-            garden.remove(a)
-        else:
-            pass
-    
+while len(set(garden)) != 3: 
+    for weed in garden:
+        if weed in weeds:
+            garden.remove(weed)
 
 
-print("сад до прополки:", garden)
+print()
+print()
+print(set(garden))
+print()
+print()
+
+print("сад после прополки:", garden)
+print(id(garden))
