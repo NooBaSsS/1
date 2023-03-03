@@ -1,0 +1,47 @@
+text = input()
+vowels = "ауоиэыяюеё"
+trans_text = []
+trans_text_1 = []
+c = 0
+c_1 = 0
+
+def check(lis) -> bool:
+    for a in range(len(lis) - 1):
+        if a == a + 1:
+            return False
+    return True
+
+for a in text:
+    if a == " ":
+        continue
+    elif a in vowels:
+        trans_text.append("g")
+    else:
+        trans_text.append("s")
+
+trans_text_1 = trans_text.copy()
+
+for i in range(len(trans_text) - 1):
+    if trans_text[i] == trans_text[i + 1]:
+        c += 1
+        if trans_text[i + 1] == 's':
+            trans_text[i + 1] = 'g'
+        else:
+            trans_text[i + 1] = 's'
+        if check(trans_text):
+            break
+        
+for i in range(1, len(trans_text_1)):
+    if trans_text_1[i] == trans_text_1[i - 1]:
+        c_1 += 1
+        if trans_text_1[i - 1] == 's':
+            trans_text_1[i - 1] = 'g'
+        else:
+            trans_text_1[i - 1] = 's'
+        if check(trans_text_1):
+            break
+    
+
+
+print(c)
+print(c_1)
